@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <h3 class="text-md-center"></h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 bg-warning">
+      <h3 class="text-lg-center tmr">LOGIN PORTAL</h3>
+      <img class="rounded mt-1 ml-4"
+        src="http://t2online.com/unsafe/780x380/smart/s3.ap-south-1.amazonaws.com/cms-abp-prod-media/library/polopoly_fs/1.95537.1522313029!/image/image.jpg_gen/derivatives/matrix2x1/image.jpg"
+        height="90%" width="95%">
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 25rem;">
+        <img
+          src="https://img.freepik.com/free-vector/purple-3d-modern-background-design_53876-87399.jpg?size=626&ext=jpg"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+            <div class="form-group mt-5 mb-5">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <h3 class="text-md-center"></h3>
+  </div>
+  <div class="row">
+    <div class="container-fluid bg-dark">
+      <p class="font-bold text-lg-center text-light">Copyrights &copy; All rights reserved.Counselling system 2019-2020</p>
+    </div>
+  </div>
+</div>
